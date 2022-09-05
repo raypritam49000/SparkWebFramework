@@ -1,0 +1,26 @@
+package com.spark.rest.api.utils;
+
+import java.util.Date;
+
+import com.spark.rest.api.entity.User;
+
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.impl.DefaultClaims;
+
+public final class JwtUtils {
+
+	 private static final long EXPIRATION_TIME = 10 * 60 * 1000l; // 10 minutes
+	 private static final String JWT_SECRET_KEY = "Pritam Ray";
+	 
+	 public final String newToken(User user) {
+	        DefaultClaims claims = new DefaultClaims();
+	        claims.put(ROLES, user.getRoles());
+	        claims.setSubject(user.getUsername());
+	        return Jwts.builder()
+	                .setClaims(claims)
+	                .setExpiration(new Date(System.currentTimeMillis() + EXPIRATION_TIME))
+	                .signWith(SignatureAlgorithm.HS512, jwtSecretKey)
+	                .compact();
+	    }
+}

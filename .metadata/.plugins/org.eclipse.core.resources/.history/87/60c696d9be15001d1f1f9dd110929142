@@ -1,0 +1,5 @@
+package com.spark.rest.api.file.reader;
+
+public class AppInfo {
+	public static final String DRIVER_CLASS_NAME = "";
+}

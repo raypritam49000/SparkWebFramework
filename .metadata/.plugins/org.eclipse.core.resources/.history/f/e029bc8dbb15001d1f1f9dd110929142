@@ -1,0 +1,8 @@
+server.port=9999
+
+spark.datasource.driver-class-name=
+spark.datasource.url=
+spark.datasource.username=
+spark.datasource.password=
+
+spark.jpa.properties.hibernate.dialect=

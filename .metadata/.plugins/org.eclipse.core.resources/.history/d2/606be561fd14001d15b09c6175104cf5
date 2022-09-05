@@ -1,0 +1,12 @@
+package com.spark.rest.api.services;
+
+import com.spark.rest.api.entity.User;
+
+public class UserServiceImpl implements UserService{
+
+	@Override
+	public User registerUser(User user) {
+		return null;
+	}
+
+}

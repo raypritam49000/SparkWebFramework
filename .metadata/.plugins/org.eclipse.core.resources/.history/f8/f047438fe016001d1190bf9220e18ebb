@@ -1,0 +1,38 @@
+package com.spark.rest.api.filter;
+
+import static spark.Spark.halt;
+
+import spark.Filter;
+import spark.Request;
+import spark.Response;
+
+public class AuthFilter implements Filter {
+
+	@Override
+	public void handle(Request request, Response response) throws Exception {
+
+		try {
+			if (!isLoginRequest(request) && !isRegistrationRequest(request)) {
+
+				String requestHeader = request.headers("Authorization");
+
+				if (requestHeader != null && requestHeader.startsWith("Bearer")) {
+                        
+				}
+
+			}
+		} catch (Exception e) {
+			halt(401, e.getMessage());
+		}
+
+	}
+
+	private boolean isLoginRequest(Request request) {
+		return request.uri().equals("/rest/auth/login") && request.requestMethod().equals("POST");
+	}
+
+	private boolean isRegistrationRequest(Request request) {
+		return request.uri().equals("/rest/auth/register") && request.requestMethod().equals("POST");
+	}
+
+}

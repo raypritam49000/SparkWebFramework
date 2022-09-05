@@ -1,0 +1,14 @@
+package com.spark.rest.api.utils;
+
+import java.util.List;
+
+
+
+public final class UserPrincipal {
+	private String username;
+	private String email;
+	
+	public static UserPrincipal of(String userName, String email) {
+        return new UserPrincipal(userName, email);
+    }
+}

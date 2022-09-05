@@ -1,0 +1,6 @@
+package com.spark.rest.api.utils;
+
+public class UserPrincipal {
+	private String username;
+	private String email;
+}

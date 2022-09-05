@@ -1,0 +1,15 @@
+package com.spark.rest.api.file.reader;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.Properties;
+
+public class PropertyFileReader {
+
+	public static String getValue(String key) throws IOException {
+		Properties properties = new Properties();
+		InputStream in = PropertyFileReader.class.getResourceAsStream("application.properties");
+		properties.load(in);
+		return properties.getProperty(key);
+	}
+}

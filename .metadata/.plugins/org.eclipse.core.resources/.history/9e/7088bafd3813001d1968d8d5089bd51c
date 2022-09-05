@@ -1,0 +1,22 @@
+package com.cdrs.gen.kafka.app.runner;
+
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Component;
+
+@Component
+public class AppRunner implements CommandLineRunner {
+	
+	@Autowired
+	private SessionFactory sessionFactory;
+
+	@Override
+	public void run(String... args) throws Exception {
+		System.out.println("Hello Pritam Ray");
+		
+		System.out.println(sessionFactory.openSession().createNativeQuery("select * from crbt_cdrs").getResultList());
+
+	}
+
+}

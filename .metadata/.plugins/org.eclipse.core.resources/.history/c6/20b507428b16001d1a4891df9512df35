@@ -1,0 +1,43 @@
+package com.spark.rest.api.services.impl;
+
+import java.io.Serializable;
+import java.util.List;
+
+import javax.persistence.Query;
+import javax.transaction.Transactional;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import com.spark.rest.api.dbconfig.HibernateUtil;
+import com.spark.rest.api.entity.Employee;
+import com.spark.rest.api.entity.Student;
+import com.spark.rest.api.services.StudentService;
+
+@Transactional
+public class StudentServiceImpl implements StudentService {
+
+	private Session session = HibernateUtil.getSession();
+
+	@Override
+	public Student createStudent(Student student) {
+        Serializable sid = session.save(student);
+		return session.get(Student.class, sid);
+	}
+
+	@Override
+	public List<Student> getStudents() {
+		Query query = session.createQuery("From Student");
+		List<Student> students = query.getResultList();
+		return students;
+	}
+
+	@Override
+	public Student getStudent(Long id) {
+		return session.get(Student.class, id);
+	}
+
+	public void deleteStudent(Long id) {
+		session.remove(session.getReference(Student.class, id));
+	}
+}

@@ -1,0 +1,6 @@
+package com.spark.rest.api.file.reader;
+
+public class AppInfo {
+	public static final String SERVER_PORT = PropertyFileReader.getValue("server.port");
+	public static final String DRIVER_CLASS_NAME = PropertyFileReader.getValue("");
+}

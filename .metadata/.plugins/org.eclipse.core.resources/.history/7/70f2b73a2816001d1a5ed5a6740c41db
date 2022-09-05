@@ -1,0 +1,32 @@
+package com.spark.rest.api.services.impl;
+
+import java.util.List;
+
+import javax.persistence.Query;
+import javax.transaction.Transactional;
+
+import org.hibernate.Session;
+
+import com.spark.rest.api.dbconfig.HibernateUtil;
+import com.spark.rest.api.entity.Student;
+import com.spark.rest.api.services.StudentService;
+
+@Transactional
+public class StudentServiceImpl implements StudentService {
+
+	private Session session = HibernateUtil.getSession();
+
+	@Override
+	public Student createStudent(Student student) {
+
+		return null;
+	}
+
+	@Override
+	public List<Student> getStudents() {
+		Query query = session.createQuery("From Student");
+		List<Student> students = query.getResultList();
+		return students;
+	}
+
+}

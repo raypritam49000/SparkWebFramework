@@ -1,0 +1,18 @@
+package com.spark.rest.api.services.impl;
+
+import org.hibernate.Session;
+
+import com.spark.rest.api.dbconfig.HibernateUtil;
+import com.spark.rest.api.entity.Student;
+import com.spark.rest.api.services.StudentService;
+
+public class StudentServiceImpl implements StudentService{
+	
+	private Session session = HibernateUtil.getSession();
+
+	@Override
+	public Student createStudent(Student student) {
+		return null;
+	}
+
+}

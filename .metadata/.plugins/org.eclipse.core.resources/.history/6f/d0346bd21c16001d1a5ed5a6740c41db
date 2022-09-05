@@ -1,0 +1,13 @@
+package com.spark.rest.api.services.impl;
+
+import com.spark.rest.api.entity.Student;
+import com.spark.rest.api.services.StudentService;
+
+public class StudentServiceImpl implements StudentService{
+
+	@Override
+	public Student createStudent(Student student) {
+		return null;
+	}
+
+}

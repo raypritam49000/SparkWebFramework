@@ -1,0 +1,7 @@
+package com.spark.rest.api.app;
+
+public class SparkApplication {
+	public static void main(String[] args) {
+
+	}
+}

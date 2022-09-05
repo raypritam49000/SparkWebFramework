@@ -1,0 +1,14 @@
+package com.spark.rest.api.app;
+
+import static spark.Spark.ipAddress;
+import static spark.Spark.port;
+
+import com.spark.rest.api.file.reader.AppInfo;
+
+public class SparkApplication {
+	public static void main(String[] args) {
+		ipAddress("10.100.1.21");
+		port(AppInfo.SERVER_PORT);
+		
+	}
+}

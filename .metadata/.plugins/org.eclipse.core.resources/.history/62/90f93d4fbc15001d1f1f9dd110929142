@@ -1,0 +1,18 @@
+package com.spark.rest.api.file.reader;
+
+import java.util.Properties;
+
+public class PropertyFileReader {
+
+	public static String getValue(String key) {
+		try 
+		{
+			Properties properties = new Properties();
+			PropertyFileReader.class.getResourceAsStream("application.properties");
+			//properties.load("");
+		} 
+		catch (Exception e) {
+			
+		}
+	}
+}

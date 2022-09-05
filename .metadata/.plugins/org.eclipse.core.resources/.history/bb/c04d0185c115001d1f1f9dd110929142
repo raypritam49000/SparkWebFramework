@@ -1,0 +1,13 @@
+package com.spark.rest.api.app;
+
+import static spark.Spark.port;
+
+import com.spark.rest.api.dbconfig.HibernateUtil;
+import com.spark.rest.api.file.reader.AppInfo;
+
+public class SparkApplication {
+	public static void main(String[] args) {
+		port(AppInfo.SERVER_PORT);
+		System.out.println(HibernateUtil.getSession());
+	}
+}

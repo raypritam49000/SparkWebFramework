@@ -1,0 +1,8 @@
+package com.spark.rest.api.utils;
+
+public class Snippet {
+	public static void main(String[] args) {
+		UserPrincipal
+	}
+}
+

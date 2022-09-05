@@ -1,0 +1,11 @@
+package com.spark.rest.api.response;
+
+public enum StatusCode {
+	OK(200);
+
+	final private int statusCode;
+
+	StatusCode(int statusCode) {
+		this.statusCode = statusCode;
+	}
+}

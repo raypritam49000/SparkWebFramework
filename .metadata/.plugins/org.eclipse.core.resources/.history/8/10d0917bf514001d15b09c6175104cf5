@@ -1,0 +1,6 @@
+package com.spark.rest.api.entity;
+
+public class User {
+	private String username;
+	private String password;
+}
